@@ -1,0 +1,29 @@
+{
+  "extends": "@tsconfig/node18-strictest-esm/tsconfig.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "resolveJsonModule": true,
+    "lib": ["DOM"],
+    "noEmit": true,
+    "types": [
+      "./node_modules/cypress",
+      "node",
+      "./cypress/support"
+    ],
+    "baseUrl": "."
+  },
+  "include": [
+    "./cypress.config.ts",
+    "cypress/",
+  ],
+  "exclude": [
+    "node_modules/",
+    "cypress/report/",
+    "cypress/screenshots/",
+    "cypress/videos/"
+  ],
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
+  }
+}

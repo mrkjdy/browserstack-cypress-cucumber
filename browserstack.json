@@ -1,0 +1,70 @@
+{
+  "auth": {
+    "username": "",
+    "access_key": ""
+  },
+  "browsers": [
+    {
+      "browser": "chrome",
+      "os": "OS X Monterey",
+      "versions": [
+        "latest"
+      ]
+    }
+  ],
+  "run_settings": {
+    "nodeVersion": "18.12.1",
+    "cypress_version": "10.latest",
+    "cypress_proj_dir": "./",
+    "cypress_config_file": "cypress.config.ts",
+    "project_name": "epricer",
+    "build_name": "CFR Example",
+    "specs": [
+      "./cypress/e2e/**"
+    ],
+    "exclude": [
+      ".git/**",
+      ".gitignore",
+      ".npmrc",
+      "README.md",
+      "appveyor-win32-x64.yml",
+      "circle.yml",
+      "cypress/downloads/**",
+      "cypress/report/**",
+      "cypress/screenshots/**",
+      "cypress/videos/**",
+      "early-stop.js",
+      "node_modules/**",
+      "package-lock.json",
+      "package.json",
+      "renovate.json"
+    ],
+    "parallels": 32,
+    "npm_dependencies": {
+      "@badeball/cypress-cucumber-preprocessor": "^14.0.0",
+      "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
+      "@tsconfig/node18-strictest-esm": "^1.0.1",
+      "cypress": "10.8",
+      "ok-file": "1.5.2",
+      "typescript": "^4.9.3"
+    },
+    "package_config_options": {
+      "type": "module",
+      "cypress-cucumber-preprocessor": {
+        "messages": {
+          "enabled": true,
+          "output": "cypress/report/messages.ndjson"
+        },
+        "html": {
+          "enabled": true,
+          "output": "cypress/report/cucumber-report.html"
+        },
+        "stepDefinitions": "cypress/steps/{**/*.step.ts,*.step.ts}",
+        "filterSpecs": true
+      }
+    },
+    "headless": true,
+    "spec_timeout": 30
+  },
+  "disable_usage_reporting": false
+}

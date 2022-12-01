@@ -1,5 +1,5 @@
 {
-  "name": "cypress-test-tiny",
+  "name": "browserstack-cypress-cucumber",
   "version": "1.0.0",
   "description": "Small project for quickly testing Cypress.io test runner",
   "scripts": {
@@ -17,10 +17,28 @@
   "author": "Gleb Bahmutov <gleb@cypress.io>",
   "license": "ISC",
   "devDependencies": {
-    "ok-file": "1.5.2"
+    "@badeball/cypress-cucumber-preprocessor": "^14.0.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
+    "@tsconfig/node18-strictest-esm": "^1.0.1",
+    "cypress": "10.8",
+    "ok-file": "1.5.2",
+    "typescript": "^4.9.3"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cypress-io/cypress-test-tiny.git"
+    "url": "https://github.com/mrkjdy/browserstack-cypress-cucumber.git"
+  },
+  "type": "module",
+  "cypress-cucumber-preprocessor": {
+    "messages": {
+      "enabled": true,
+      "output": "cypress/report/messages.ndjson"
+    },
+    "html": {
+      "enabled": true,
+      "output": "cypress/report/cucumber-report.html"
+    },
+    "stepDefinitions": "cypress/steps/{*.step.ts,**/*.step.ts}",
+    "filterSpecs": true
   }
 }
